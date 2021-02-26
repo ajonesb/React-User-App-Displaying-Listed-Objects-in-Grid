@@ -80,3 +80,13 @@ i#delete {
   border-top: 1px solid #bfbfbf;
   padding-top: 1em;
 }
+
+
+/* Mobile Responsive */
+
+@media (max-width: 768px) {
+  .header h1, .searchField, .addBtn {
+    width: 100%;
+ 
+}
+}
