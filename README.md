@@ -34,6 +34,6 @@ Once Cypress opens on the browser, click on specific file to test application:
 In integration - examples:
 
 - init.spec.js - Will test run application and make sure it loads.
-- users_app_tests - Load basic functionality when loading page
+- users_app_tests.spec.js - Test basic functionality
 
 ## Demo

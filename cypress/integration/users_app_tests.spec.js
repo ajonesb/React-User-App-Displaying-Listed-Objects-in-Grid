@@ -1,13 +1,6 @@
 describe("User App Testing", () => {
   // Test App Load and DOM Elements
 
-  /*
-    As a user, I want to be able to search for an object by name or property.
-
-    As a user, I want to be able to refresh the list and get any updated objects
-    
-    */
-
   it("Loads the App", () => {
     cy.visit("http://localhost:3000");
   });
@@ -16,15 +9,25 @@ describe("User App Testing", () => {
     cy.get("h1").should("have.text", "My People");
   });
 
-  it("Should have a search input", () => {
-    cy.get("input").should("have.class", "searchInput");
+  // As a user, I want to be able to search for an object by name or property.
+
+  it("Should find the input field to search for a user.", () => {
+    const hasSearchInput = (expectedSearchInputClass) => {
+      return ($el) => {
+        const classList = Array.from($el[0].classList);
+        return expectedSearchInputClass.some((expectedSearchInput) =>
+          classList.includes(expectedSearchInput)
+        );
+      };
+    };
+    cy.get("input").should("satisfy", hasSearchInput(["searchInput"]));
   });
 
   it("Should show the Add New User button", () => {
     cy.get("button").should("have.text", "Add New User" + "Clear");
   });
 
-  // View the data on a modal lightbox 
+  // View the data on a modal lightbox
 
   it("Should find the eye icon to view the modal for the data.", () => {
     const hasEyeIcon = (expectedEyeIconClass) => {
@@ -41,14 +44,28 @@ describe("User App Testing", () => {
   // As a user, I want to be able to edit metadata about each object
 
   it("Should find the edit icon to view the modal for editing the data.", () => {
-    const hasEditIcon = (expectedEditIconClass) => {
+    const hasDeleteIcon = (expectedDeleteIconClass) => {
       return ($el) => {
         const classList = Array.from($el[0].classList);
-        return expectedEditIconClass.some((expectedEditIcon) =>
-          classList.includes(expectedEditIcon)
+        return expectedDeleteIconClass.some((expectedDeleteIcon) =>
+          classList.includes(expectedDeleteIcon)
         );
       };
     };
-    cy.get("i#edit").should("satisfy", hasEditIcon(["fa-edit"])); //passes
+    cy.get("i#edit").should("satisfy", hasDeleteIcon(["fa-edit"])); //passes
+  });
+
+  // Delete the data from the table
+
+  it("Should find the delete trash icon to delete the data.", () => {
+    const hasDeleteIcon = (expectedDeleteIconClass) => {
+      return ($el) => {
+        const classList = Array.from($el[0].classList);
+        return expectedDeleteIconClass.some((expectedDeleteIcon) =>
+          classList.includes(expectedDeleteIcon)
+        );
+      };
+    };
+    cy.get("i#delete").should("satisfy", hasDeleteIcon(["fa-trash-alt"])); //passes
   });
 });
