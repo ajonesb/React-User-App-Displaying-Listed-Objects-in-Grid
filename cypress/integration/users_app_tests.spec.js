@@ -6,7 +6,7 @@ describe("User App Testing", () => {
   });
 
   it("Should have a header", () => {
-    cy.get("h1").should("have.text", "My People");
+    cy.get("h1").should("have.text", "My Users");
   });
 
   // As a user, I want to be able to search for an object by name or property.
