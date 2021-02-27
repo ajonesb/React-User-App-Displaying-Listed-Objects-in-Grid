@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "reactstrap";
 import { AvForm, AvField } from "availity-reactstrap-validation";
+import { IEditUserFormProps } from "../interface";
 
-const EditUserForm: React.FC = ( props: any ) => {
+const EditUserForm: React.FC<IEditUserFormProps> = (props: any) => {
   const { currentUser, updateUser, toggle } = props;
   const [user, setUser] = useState(currentUser);
 

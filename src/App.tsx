@@ -9,8 +9,9 @@ import ViewModal from "./Components/Modals/ViewModal";
 import { FiSearch } from "react-icons/fi";
 import { IUsers } from "./Components/interface";
 
+
 const App: React.FC = () => {
-  const Initial_State: Array<IUsers> = {
+  const Initial_State = {
     id: null,
     name: "",
     email: "",
@@ -34,12 +35,7 @@ const App: React.FC = () => {
     setModal(!modal);
   };
 
-  const addUser = (user: {
-    id: any;
-    name?: string;
-    email?: string;
-    mobile?: string;
-  }) => {
+  const addUser = (user) => {
     user.id = users.length + 1;
     setUsers([...users, user]);
     setModal(false);

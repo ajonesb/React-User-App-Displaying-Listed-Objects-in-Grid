@@ -9,7 +9,6 @@ type ViewModalProps = {
 };
 
 const ViewModal: React.FC<ViewModalProps> = ({ user, modal, toggle }) => {
-  // const ViewModal = ({ user, modal, toggle }) => {
   console.log(toggle, "toggle");
 
   return (

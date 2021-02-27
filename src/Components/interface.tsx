@@ -1,19 +1,14 @@
 export interface IUsers {
-  id: null;
+  id: any;
   name: string;
   email: string;
   mobile: string;
 }
 
-// export interface IUser extends IUsers {
-//     id: number;
-//   }
-
-// export interface EditModalInterface {
-//     modal: any;
-//     toggle: any;
-//     editing: any;
-//     setEditing: any;
-//     updateUser: any;
-//     currentUser: any;
-// }
+export interface IEditUserFormProps {
+  editing: any;
+  setEditing: any;
+  updateUser: any;
+  currentUser: any;
+  toggle: any;
+}

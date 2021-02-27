@@ -36,4 +36,7 @@ In integration - examples:
 - init.spec.js - Will test run application and make sure it loads.
 - users_app_tests.spec.js - Test basic functionality
 
+## Deployment
+npm run build
+
 ## Demo

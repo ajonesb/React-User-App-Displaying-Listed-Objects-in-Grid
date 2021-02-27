@@ -5,11 +5,12 @@ import EditUserForm from "../Forms/EditUserForm";
 type AddNewModelProps = {
   modal: any;
   toggle: any;
-  editing: any;
+  editing?: any;
   setEditing: any;
   updateUser: any;
   currentUser: any;
 };
+
 
 const EditModal: React.FC<AddNewModelProps> = ({
   modal,
@@ -29,12 +30,7 @@ const EditModal: React.FC<AddNewModelProps> = ({
           Edit List
         </ModalHeader>
         <ModalBody>
-          <EditUserForm
-            editing={editing}
-            setEditing={setEditing}
-            updateUser={updateUser}
-            currentUser={currentUser}
-            toggle={toggle}
+          <EditUserForm editing={editing} setEditing={setEditing} updateUser={updateUser} currentUser={currentUser} toggle={toggle}
           />
         </ModalBody>
       </Modal>
