@@ -40,3 +40,4 @@ In integration - examples:
 npm run build
 
 ## Demo
+http://codejones.tech/react-user-app/
